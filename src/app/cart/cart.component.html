@@ -1,0 +1,35 @@
+<br>
+<br><br>
+<h1 class="fa fa-underline" aria-hidden="true"> Shopping Cart </h1>
+<div class="container table-responsive py-5">
+
+    <table class="table table-striped" aria-labelledby="tablelabel" *ngIf="cart">
+        <thead class="thead-dark">
+            <th scope="col">CartId</th>
+            <th scope="col">Item</th>
+            <th scope="col">ItemPrice</th>
+           
+            <th scope="col">VegetableId</th>
+            
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let ct of cart">
+                <td>{{ct.CartId}}</td>
+                <td>{{ct.VegetableName}}</td>
+                <td>{{ct.VegetablePrice}}</td>
+                
+                <td>{{ct.VegetableId}}</td>
+                <button type="button" class="btn btn-light" (click)="DeleteCart(ct.CartId)">
+                    <mat-icon>delete_sweep</mat-icon>
+                </button>
+            </tr>
+            <button class="btn btn-primary" style="background-color:rgb(0, 90, 0);" (click)="addOrder()">Confirm Order</button>
+        </tbody>
+    </table>
+
+</div>
+
+<!--
+
+-->
